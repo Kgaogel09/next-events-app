@@ -9,7 +9,7 @@ function MainNav() {
       </div>
 
       <nav className={classes.navigation}>
-        <Link href="events">Browse All Events</Link>
+        <Link href="/events">Browse All Events</Link>
       </nav>
     </header>
   );
