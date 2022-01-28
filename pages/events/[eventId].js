@@ -5,6 +5,7 @@ import EventSummary from "../../components/event-detail/event-summary";
 import Button from "../../components/ui/button";
 import ErrorAlert from "../../components/ui/error-alert";
 import { getEventById, getFeaturedEvents } from "../../helpers/api-utils";
+import Head from "next/head";
 
 function EventDetailPage({ event }) {
   // const router = useRouter();
@@ -22,6 +23,10 @@ function EventDetailPage({ event }) {
   }
   return (
     <Fragment>
+      <Head>
+        <title>{event.title}</title>
+        <meta name="description" content={event.description}></meta>
+      </Head>
       <EventSummary title={event.title} />
       <EventLogistics
         date={event.date}
