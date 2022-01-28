@@ -24,9 +24,20 @@ function SearchEventPage(props) {
   // const numYear = +filteredYear;
   // const numMonth = +filteredMonth;
 
+  const pageHeadData = (
+    <Head>
+      <title>Filtered Events</title>
+      <meta
+        name="description"
+        content={`All events for ${props.date.month}/${props.date.year}`}
+      ></meta>
+    </Head>
+  );
+
   if (props.hasError) {
     return (
       <Fragment>
+        {pageHeadData}
         <ErrorAlert>
           <p>Invalid filter. Please adjust your values!</p>
         </ErrorAlert>
@@ -42,6 +53,7 @@ function SearchEventPage(props) {
   if (!filteredEvents || filteredEvents.length === 0) {
     return (
       <Fragment>
+        {pageHeadData}
         <ErrorAlert>
           <p>No events found!</p>
         </ErrorAlert>
@@ -56,13 +68,7 @@ function SearchEventPage(props) {
   const date = new Date(props.date.year, props.date.month - 1);
   return (
     <Fragment>
-      <Head>
-        <title>Filtered Events</title>
-        <meta
-          name="description"
-          content={`All events for ${props.date.month}/${props.date.year}`}
-        ></meta>
-      </Head>
+      {pageHeadData}
       <ResultsTitle date={date} />
       <EventList items={filteredEvents} />
     </Fragment>
