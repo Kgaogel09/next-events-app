@@ -6,6 +6,7 @@ import Button from "../../components/ui/button";
 import ErrorAlert from "../../components/ui/error-alert";
 import { getEventById, getFeaturedEvents } from "../../helpers/api-utils";
 import Head from "next/head";
+import Comments from "../../components/input/comments";
 
 function EventDetailPage({ event }) {
   // const router = useRouter();
@@ -37,6 +38,7 @@ function EventDetailPage({ event }) {
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+      <Comments eventId={event.id} />
     </Fragment>
   );
 }
