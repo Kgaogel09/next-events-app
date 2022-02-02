@@ -1,8 +1,9 @@
-function handler() {
+function handler(req, res) {
   const eventId = req.query.eventId;
 
   if (req.method === "POST") {
     const { email, name, text } = req.body;
+
     if (
       !email.includes("@") ||
       !name ||
@@ -14,7 +15,7 @@ function handler() {
       return;
     }
     const newComment = {
-      id: new Date().toISOString,
+      id: new Date().toISOString(),
       email,
       name,
       text,
