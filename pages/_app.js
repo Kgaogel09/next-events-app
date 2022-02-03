@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Layout from "../components/layout/layout";
-import NotificationContext from "../store/notification-context";
 import "../styles/globals.css";
+import { NotificationContextProvider } from "../store/notification-context";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <NotificationContext>
+    <NotificationContextProvider>
       <Layout>
         <Head>
           <meta
@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
         </Head>
         <Component {...pageProps} />
       </Layout>
-    </NotificationContext>
+    </NotificationContextProvider>
   );
 }
 

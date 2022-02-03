@@ -13,5 +13,4 @@ export function NotificationContextProvider(props) {
     </NotificationContext.Provider>
   );
 }
-
 export default NotificationContext;
