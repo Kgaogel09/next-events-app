@@ -58,7 +58,7 @@ async function handler(req, res) {
       return;
     }
   }
-  client.close();
+  // client.close();
 }
 
 export default handler;
